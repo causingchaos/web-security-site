@@ -17,7 +17,7 @@ app.get('/', function (request, response) {
   } else {
     var envName = 'review app'
   }
-  response.set({
+  response.set({ //C-S-P:  
     "Content-Security-Policy": "script-src 'self' https://security-resources.herokuapp.com https://ajax.googleapis.com"
   });
   response.render('index.html', { env: envName });
