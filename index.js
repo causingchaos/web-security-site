@@ -28,7 +28,7 @@ app.get('/', function (request, response) {
 
   //Set HTTPS header.
   response.set({
-    "Strict-Transport-Security": "max-age=31536000"
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
   });
   response.render('index.html', { env: envName });
 });
