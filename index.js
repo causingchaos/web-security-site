@@ -19,7 +19,7 @@ app.get('/', function (request, response) {
   }
   response.set({ //C-S-P:  
     //"Content-Security-Policy": "script-src 'self'"  -- will block scripts outside our security-site web address (http://security-site.herokuapp.com)
-    "Content-Security-Policy": "script-src 'self' https://security-resources.herokuapp.com https://ajax.googleapis.com https://platform.linkedin.com https://www.linkedin.com; frame-src https://www.linkedin.com"
+    "Content-Security-Policy": "default-src 'none' ;script-src 'self' https://security-resources.herokuapp.com https://ajax.googleapis.com https://platform.linkedin.com https://www.linkedin.com; frame-src https://www.linkedin.com"
     //frame-src is for the linked in widget, also the other content policy
     
   });
