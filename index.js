@@ -19,7 +19,7 @@ app.get('/', function (request, response) {
   }
   response.set({ //C-S-P:  
     //"Content-Security-Policy": "script-src 'self'"  -- will block scripts outside our security-site web address (http://security-site.herokuapp.com)
-    "Content-Security-Policy": "script-src 'self' https://security-resources.herokuapp.com https://ajax.googleapis.com https://platform.linkedin.com; frame-src 'none'"
+    "Content-Security-Policy": "script-src 'self' https://security-resources.herokuapp.com https://ajax.googleapis.com https://platform.linkedin.com; https://www.linkedin.com frame-src 'none'"
     
   });
   response.render('index.html', { env: envName });
