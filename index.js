@@ -30,6 +30,10 @@ app.get('/', function (request, response) {
   response.set({
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
   });
+  //create secure cookie
+  response.cookie('lang','en-US');
+  response.cookie('siteToken','8d92', {httpOnly: true});
+
   response.render('index.html', { env: envName });
 });
 
