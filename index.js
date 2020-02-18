@@ -21,10 +21,14 @@ app.get('/', function (request, response) {
     //"Content-Security-Policy": "script-src 'self'"  -- will block scripts outside our security-site web address (http://security-site.herokuapp.com)
     // default-src 'none'   this will block all fonts, images, ect not part of our source
     "Content-Security-Policy": "default-src 'none' ;script-src 'self' https://security-resources.herokuapp.com https://ajax.googleapis.com https://platform.linkedin.com https://www.linkedin.com; frame-src https://www.linkedin.com; img-src https://security-resources.herokuapp.com; style-src https://security-resources.herokuapp.com 'unsafe-inline'; font-src https://security-resources.herokuapp.com"
-
-    
+    //use unsafe-inline files to allow direct HTML inline styling
     //frame-src is for the linked in widget, also the other content policy
     
+  });
+
+  //Set HTTPS header.
+  response.set({
+    "Strict-Transport-Security": "max-age=31536000"
   });
   response.render('index.html', { env: envName });
 });
